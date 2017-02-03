@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>七巧板</title>
+</head>
+<script>document.write('<script src="http://' + (location.host || 'localhost').split(':')[0] + ':35729/livereload.js?snipver=1"></' + 'script>')</script>
+<style type="text/css">
+	#canvas{
+		border: 1px solid #aaa;
+		display: block;
+		margin: 50px auto;
+	}
+</style>
+<body>
+	<canvas id="canvas">浏览器不支持 Canvas</canvas>
+</body>
+<script>
+	var points=[
+		{px:[{x:0,y:0},{x:800,y:0},{x:400,y:400}],color:"#caff67"},
+		{px:[{x:0,y:0},{x:400,y:400},{x:0,y:800}],color:"#67becf"},
+		{px:[{x:800,y:0},{x:800,y:400},{x:600,y:600},{x:600,y:200}],color:"#ef3d61"},
+		{px:[{x:600,y:200},{x:600,y:600},{x:400,y:400}],color:"#f9f51a"},
+		{px:[{x:400,y:400},{x:600,y:600},{x:400,y:800},{x:200,y:600}],color:"#a594c0"},
+		{px:[{x:200,y:600},{x:400,y:800},{x:0,y:800}],color:"#fa8ecc"},
+		{px:[{x:800,y:400},{x:800,y:800},{x:400,y:800}],color:"#f6ca29"}
+	]
+	window.onload=function(){
+		var canvas=document.getElementById("canvas")
+		canvas.width=800
+		canvas.height=800
+		var context=canvas.getContext("2d")
+		for(var i=0;i<points.length;i++)
+			draw(points[i],context)
+	}
+	function draw(points,context){
+		context.beginPath()
+		context.moveTo(points.px[0].x,points.px[0].y)
+		for(var i=1;i<points.px.length;i++)
+			context.lineTo(points.px[i].x,points.px[i].y)
+		context.closePath()
+		context.fillStyle=points.color
+		context.fill()
+		context.strokeStyle="black"
+		context.lineWidth=1
+		context.stroke()
+	}
+</script>
+</html>
