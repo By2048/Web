@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        div {
+            background: white;
+        }
+
+        .red {
+            background: red;
+        }
+
+        .red.green {
+            background: green;
+        }
+    </style>
+        <script src="..\_jquery\jquery-3.2.1.js"></script>
+        
+</head>
+
+<body>
+
+    <div>11111111111</div>
+    <div class="red">2222222222</div>
+    <div>333333333333333</div>
+    <p>444444444444444444</p>
+    <p>555555555</p>
+    
+
+    <script>
+        $("div").addClass(function(index,currentClass){
+            var addedClass;
+            if(currentClass==="red"){
+                addedClass="green";
+                $("p").eq(0).text("rwgawegwaerfwe")
+            }
+            if(index===0){
+                addedClass="red";
+            }
+            return addedClass;
+        });
+
+        $("p").last().addClass("red");
+        $("p").last().removeClass("red");
+
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        p {
+            margin: 8px;
+            font-size: 20px;
+            color: blue;
+            cursor: pointer;
+        }
+
+        b {
+            text-decoration: underline;
+        }
+
+        button {
+            cursor: pointer;
+        }
+    </style>
+    <script src="..\_jquery\jquery-3.2.1.js"></script>
+
+</head>
+
+<body>
+    <p>
+        <b>Click</b> to change the <span id="tag">html</span>
+    </p>
+    <p>
+        to a <span id="text">text</span> node.
+    </p>
+    <p>
+        This <button name="nada">button</button> does nothing.
+    </p>
+    <div class="demo-container">
+        <div class="demo-box">Demonstration Box</div>
+    </div>
+    <script>
+        $("p").click(function () {
+            var htmlStr = $(this).html();
+            $(this).text(htmlStr);
+        });
+        $('div.demo-container').html('<p>All new content. <em>You bet!</em></p>');
+    </script>
+
+</body>
+
+</html>

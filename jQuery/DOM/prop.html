@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        p {
+            margin: 20px 0 0
+        }
+
+        b {
+            color: blue;
+        }
+    </style>
+    <script src="..\_jquery\jquery-3.2.1.js"></script>
+
+</head>
+
+<body>
+
+    <input id="check1" type="checkbox" checked="checked">
+    <label for="check1">Check me</label>
+    <p></p>
+
+    <input id="check2" type="checkbox" checked="checked">check-2
+
+    <script>
+        $("#check1").change(function () {
+            var $input = $(this);
+            $("p").html(".attr('checked'): <b>" + $input.attr('checked') + "</b><br>"
+                + ".prop('checked'): <b>" + $input.prop('checked') + "</b><br>"
+                + ".is(':checked'): <b>" + $input.is(':checked')) + "</b>";
+        }).change();
+
+        $("#check2").prop("disabled", true);
+        $("#check2").prop("checked", false);
+        $("#check2").val("someValue");
+    </script>
+
+</body>
+
+</html>

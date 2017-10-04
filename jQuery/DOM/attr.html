@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    em {
+      color: blue;
+      font-weight: bold;
+    }
+
+    div {
+      color: red;
+    }
+  </style>
+  <script src="..\_jquery\jquery-3.2.1.js"></script>
+
+</head>
+
+<body>
+
+  <p>
+    Once there was a <em title="huge, gigantic">large</em> dinosaur...
+  </p>
+
+  <img id="greatphoto" src="brush-seller.jpg" alt="brush seller" />
+
+  <img />
+  <img />
+  <img /> 
+  
+  
+  The title of the emphasis is:
+
+  <div></div>
+
+  <script>
+    $('#greatphoto').attr('alt', 'Beijing Brush Seller');
+    var title = $("em").attr("title");
+    $("div").text(title);
+
+    $("img").attr({
+      src: "images/hat.gif",
+      title: "img-title",
+      alt: "img-alt"
+    });
+    $("div").text($("img").attr("alt"));
+  </script>
+
+</body>
+
+</html>
